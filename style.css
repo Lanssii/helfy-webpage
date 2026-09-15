@@ -359,102 +359,17 @@ header {
   background-color: #008935;
 }
 
-/* MEDIA QUERIES */
-
-@media (max-width: 1200px) {
-  .review-card {
-    flex: 0 0 calc((100% - 20px) / 2);
-  }
-}
-@media (max-width: 1024px) {
-  .hero {
-    flex-direction: column-reverse;
-  }
-  .hero-left {
-    width: 100%;
-  }
-  .hero-left {
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .hero-left img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .hero-right {
-    padding: clamp(29px, 5vw, 72px) clamp(20px, 5vw, 120px);
-  }
-}
-@media (max-width: 768px) {
-  .bar-desktop-text {
-    display: none;
-  }
-
-  .bar-mobile-text {
-    display: inline;
-  }
-  .hero-left img {
-    height: auto;
-    max-height: 450px;
-    object-fit: contain;
-  }
-
-  .hero-title {
-    font-size: 32px;
-    line-height: 1.2;
-  }
-
-  .hero-description {
-    font-size: 18px;
-  }
-
-  .description-list p {
-    font-size: 16px;
-  }
-
-  .rating-title,
-  .rating-number {
-    font-size: 16px;
-  }
-
-  .rating-score {
-    font-size: 15px;
-  }
-
-  .patient-reviews {
-    text-align: center;
-  }
-  .review-card {
-    flex: 0 0 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-left img {
-    height: auto;
-    max-height: 286px;
-  }
-  .rating-title,
-  .rating-number {
-    font-size: 12px;
-  }
-  .rating-stars svg {
-    width: 13px;
-    height: 13px;
-  }
-}
-
 /* WORK STEPS SECTION */
 .work-steps {
   background-color: #e8f2e4;
   margin: 80px 35px 100px 35px;
-  /* padding: 68px 194px 86px 208px; */
   padding: 68px 0px;
   border-radius: 24px;
+}
+.work-steps-container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .work-steps-title {
@@ -486,8 +401,8 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(24px, 2.5vw, 35px);
+  width: 100%;
 }
-
 .step-card {
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(15px);
@@ -554,8 +469,127 @@ header {
   display: block;
 }
 
+/* STEP CARDS SLIDER CONTROLS */
+.steps-controls {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1200px) {
+  .review-card {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+  }
+  .hero-left {
+    width: 100%;
+  }
+  .hero-left {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .hero-left img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-right {
+    padding: clamp(29px, 5vw, 72px) clamp(20px, 5vw, 120px);
+  }
+
+  .work-steps-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 20px;
+    gap: 20px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .work-steps-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .step-card {
+    flex: 0 0 85%;
+    max-width: 400px;
+    scroll-snap-align: center;
+  }
+
+  .steps-controls {
+    display: flex;
+    margin-top: 32px;
+  }
+}
 @media (max-width: 768px) {
+  .bar-desktop-text {
+    display: none;
+  }
+
+  .bar-mobile-text {
+    display: inline;
+  }
+  .hero-left img {
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .description-list p {
+    font-size: 16px;
+  }
+
+  .rating-title,
+  .rating-number {
+    font-size: 16px;
+  }
+
+  .rating-score {
+    font-size: 15px;
+  }
+
+  .patient-reviews {
+    text-align: center;
+  }
+  .review-card {
+    flex: 0 0 100%;
+  }
   .step-card {
     max-height: 290px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left img {
+    height: auto;
+    max-height: 286px;
+  }
+  .rating-title,
+  .rating-number {
+    font-size: 12px;
+  }
+  .rating-stars svg {
+    width: 13px;
+    height: 13px;
   }
 }

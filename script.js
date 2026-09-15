@@ -1,50 +1,64 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // GET ELEMENTS
-  const track = document.getElementById("reviewsTrack");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const dots = document.querySelectorAll(".dot");
+  // SLIDER LOGIC
+  const initSlider = (trackId, prevBtnId, nextBtnId, dotsSelector) => {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevBtnId);
+    const nextBtn = document.getElementById(nextBtnId);
+    const dots = document.querySelectorAll(dotsSelector);
 
-  if (!track || !prevBtn || !nextBtn) return;
+    if (!track || !prevBtn || !nextBtn) return;
 
-  // Width of one card + gap
-  const getScrollAmount = () => {
-    const card = track.querySelector(".review-card");
+    const getScrollAmount = () => {
+      const card = track.children[0];
+      if (!card) return 300;
 
-    if (!card) return 300;
+      const style = window.getComputedStyle(track);
+      const gap = parseFloat(style.gap) || 20;
 
-    const gap = 20;
+      return card.offsetWidth + gap;
+    };
 
-    return card.offsetWidth + gap;
-  };
+    const updateDots = () => {
+      const scrollAmount = getScrollAmount();
+      if (scrollAmount === 0) return;
 
-  // UPDATE ACTIVE PAGINATION DOT
-  const updateDots = () => {
-    const scrollAmount = getScrollAmount();
+      const currentSlide = Math.round(track.scrollLeft / scrollAmount);
 
-    const currentSlide = Math.round(track.scrollLeft / scrollAmount);
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    };
 
+    // NEXT BUTTON
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({
+        left: getScrollAmount(),
+        behavior: "smooth",
+      });
+    });
+
+    // PREVIOUS BUTTON
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({
+        left: -getScrollAmount(),
+        behavior: "smooth",
+      });
+    });
+
+    // CLICK ON DOTS (ADDITIONAL)
     dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === currentSlide);
+      dot.addEventListener("click", () => {
+        track.scrollTo({
+          left: index * getScrollAmount(),
+          behavior: "smooth",
+        });
+      });
     });
+
+    track.addEventListener("scroll", updateDots);
   };
 
-  // NEXT BUTTON
-  nextBtn.addEventListener("click", () => {
-    track.scrollBy({
-      left: getScrollAmount(),
-      behavior: "smooth",
-    });
-  });
+  initSlider("reviewsTrack", "prevBtn", "nextBtn", ".patient-reviews .dot");
 
-  // PREVIOUS BUTTON
-  prevBtn.addEventListener("click", () => {
-    track.scrollBy({
-      left: -getScrollAmount(),
-      behavior: "smooth",
-    });
-  });
-
-  // UPDATING DOTS WHILE SCROLLING
-  track.addEventListener("scroll", updateDots);
+  initSlider("stepsTrack", "stepsPrevBtn", "stepsNextBtn", ".steps-dots .dot");
 });

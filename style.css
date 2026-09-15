@@ -49,6 +49,33 @@ header {
   overflow: hidden;
   background-color: #08080a;
   color: #ffffff;
+  position: relative;
+}
+
+.announcement-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 16px;
+  padding-right: 2px;
+  height: 100%;
+  background-color: #08080a;
+  z-index: 10;
+  flex-shrink: 0;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.announcement-divider {
+  color: #bebebe;
+  font-weight: 500;
+}
+
+.announcement-wrapper {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .announcement-track {
@@ -63,24 +90,25 @@ header {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
-  padding: 12px 34px;
-
+  padding: 0 34px;
   font-size: 11px;
   white-space: nowrap;
-}
-
-.announcement-icon {
-  font-size: 9px;
 }
 
 @keyframes announcement-scroll {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
+}
+.bar-mobile-text {
+  display: none;
+}
+
+.bar-desktop-text {
+  display: inline;
 }
 
 /* HERO */
@@ -226,6 +254,13 @@ header {
   }
 }
 @media (max-width: 768px) {
+  .bar-desktop-text {
+    display: none;
+  }
+
+  .bar-mobile-text {
+    display: inline;
+  }
   .hero-left img {
     height: auto;
     max-height: 450px;

@@ -415,8 +415,7 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: 500px;
-  height: 100%;
+  max-height: 500px;
   overflow: visible;
 }
 
@@ -453,7 +452,6 @@ header {
   margin-top: auto;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
   line-height: 0;
   overflow: hidden;
   border-bottom-left-radius: 24px;
@@ -474,6 +472,62 @@ header {
   display: none;
 }
 
+/* FOOTER */
+
+footer {
+  background-color: #000000;
+  margin: 0px 46px 75px 46px;
+
+  padding: 68px 0px;
+  border-radius: 24px;
+}
+.footer-container {
+  max-width: 1850px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-icons {
+  display: flex;
+  gap: 28px;
+  cursor: pointer;
+}
+
+footer hr {
+  margin-top: 38px;
+  margin-bottom: 28px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-images {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 27px;
+}
+.footer-description,
+.rights {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  line-height: 1.5;
+  font-size: clamp(12px, 14.73px - 0.23vw, 14px);
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+
+.rights {
+  margin-top: 20px;
+}
 /* MEDIA QUERIES */
 
 @media (max-width: 1200px) {
@@ -531,6 +585,35 @@ header {
     display: flex;
     margin-top: 32px;
   }
+  .footer-top {
+    flex-direction: column;
+  }
+  .social-icons {
+    gap: 4px;
+  }
+  .social-icons svg {
+    width: 50px;
+    height: 50px;
+  }
+  .footer-container {
+    padding: 0px 10px;
+  }
+
+  footer .brand-logo {
+    margin-bottom: 35px;
+  }
+  footer .brand-logo img {
+    width: 162px;
+    height: 18px;
+  }
+
+  .footer-images {
+    gap: 0px;
+  }
+  .footer-images img {
+    width: 74px;
+    height: 76px;
+  }
 }
 @media (max-width: 768px) {
   .bar-desktop-text {
@@ -573,9 +656,6 @@ header {
   }
   .review-card {
     flex: 0 0 100%;
-  }
-  .step-card {
-    max-height: 290px;
   }
 }
 

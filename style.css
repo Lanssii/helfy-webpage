@@ -237,8 +237,14 @@ header {
 /* PATIENT REVIEWS SECTION */
 .patient-reviews {
   background-color: #f5f9f6;
-  padding: clamp(40px, 5vw, 74px) clamp(20px, 10vw, 206px) 40px
-    clamp(20px, 10vw, 206px);
+  padding: clamp(40px, 5vw, 74px) 0;
+  width: 100%;
+}
+
+.reviews-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .patient-reviews h2 {

@@ -13,7 +13,9 @@ a {
   text-decoration: none;
   color: #ffffff;
 }
-
+p {
+  margin: 0;
+}
 hr {
   margin: 0;
 }
@@ -32,4 +34,113 @@ header {
   justify-content: center;
   align-items: center;
   padding: 28px 0px 26px 0px;
+}
+
+/* HERO */
+
+.hero {
+  display: flex;
+  width: 100%;
+}
+
+.hero-left {
+  flex: 1;
+  background-color: #e8f2e4;
+  flex: 0 0 50%;
+}
+.hero-left img {
+  width: 100%;
+  height: 839px;
+  object-fit: cover;
+}
+.hero-right {
+  flex: 1;
+  padding: 72px 185px 64px 120px;
+}
+.hero-title {
+  font-size: 70px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.hero-description {
+  font-size: 22px;
+  margin-bottom: 11px;
+}
+
+.description-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 40px;
+  margin-top: 24px;
+}
+.description-list div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f1f7ef;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 26px;
+  border-radius: 10px;
+  max-width: 662px;
+  width: 100%;
+}
+
+.description-list p {
+  font-size: 20px;
+}
+
+.hero button {
+  background-color: #154b3e;
+  border-radius: 10px;
+  padding: 10px 30px;
+  box-shadow: 0 1.15px 2.09px -452px rgba(16, 137, 61, 0.0305),
+    0 5.05px 4.32px -452px rgba(16, 137, 61, 0.0495);
+  color: #ffffff;
+  max-width: 351px;
+  width: 100%;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 26px;
+}
+
+.rating-logo {
+  width: 54px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.rating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-title {
+  font-size: 22px;
+}
+
+.rating-number {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+}
+
+.rating-score {
+  font-size: 18px;
+  font-weight: bold;
 }

@@ -447,3 +447,115 @@ header {
     height: 13px;
   }
 }
+
+/* WORK STEPS SECTION */
+.work-steps {
+  background-color: #e8f2e4;
+  margin: 80px 35px 100px 35px;
+  /* padding: 68px 194px 86px 208px; */
+  padding: 68px 0px;
+  border-radius: 24px;
+}
+
+.work-steps-title {
+  text-align: center;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.work-steps-subtitle {
+  font-size: clamp(18px, 1.7vw, 24px);
+  font-weight: 500;
+  color: #08080a;
+  margin-bottom: 3px;
+}
+
+.main-text {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(36px, 3.5vw, 52px);
+  font-weight: 600;
+  color: #08080a;
+  margin: 0;
+}
+
+.green-text {
+  color: #008935;
+}
+
+/* CARDS GRID */
+.work-steps-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 2.5vw, 35px);
+}
+
+.step-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0px 14.08px 276.3px 0px rgba(0, 137, 53, 0.1);
+  border-radius: 24px;
+  padding: 50px clamp(20px, 5.7vw, 82px) 0px clamp(20px, 5.7vw, 82px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 500px;
+  height: 100%;
+  overflow: visible;
+}
+
+.step-card-number {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 43px;
+  height: 43px;
+  background-color: #008935;
+  color: #ffffff;
+  border-radius: 50%;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(16px, 2.1vw, 27px);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.step-card-title {
+  font-size: clamp(20px, 2.7vw, 32px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: #08080a;
+  margin-bottom: 30px;
+  margin-top: 25px;
+}
+
+.image-container {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 0;
+  overflow: hidden;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.step-card-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .step-card {
+    max-height: 290px;
+  }
+}
